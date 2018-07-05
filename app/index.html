@@ -51,6 +51,7 @@
 
     <!-- Your styles -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/custom.css">
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -78,169 +79,171 @@
       <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="checkout">
           <section class="section--center mdl-grid mdl-grid--no-spacing">
-            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-              <form id="purchaseForm">
+            <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+              <form id="purchaseForm" action="" >
                 <div
-                  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--6-col-phone">
-                  <input class="mdl-textfield__input" type="text" pattern="[A-Z,a-z]*" id="firstName" required/>
-                  <label class="mdl-textfield__label" for="firstName">First name</label>
-                  <span class="mdl-textfield__error">Only alphabet and no spaces</span>
+                  class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone step">
+                  <h1>
+                    <span>
+                      1
+                    </span>
+                    Personal information
+                  </h1>
                 </div>
                 <div
                   class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--6-col-phone">
-                  <input class="mdl-textfield__input" type="text" pattern="[A-Z,a-z]*" id="lastName" required/>
-                  <label class="mdl-textfield__label" for="lastName">Last name</label>
-                  <span class="mdl-textfield__error">Only alphabet and no spaces</span>
+                  <div class="input-wrapper mdl-shadow--2dp">
+                    <input class="mdl-textfield__input" type="text" id="firstName" name="firstName"
+                           data-error=".error-firstName"/>
+                    <label class="mdl-textfield__label" for="firstName">First name</label>
+                  </div>
+
+                  <span class="mdl-textfield__error error-firstName">
+                  </span>
+                </div>
+                <div
+                  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--6-col-phone">
+                  <div class="input-wrapper mdl-shadow--2dp">
+                    <input class="mdl-textfield__input" type="text" id="lastName"
+                           name="lastName" data-error=".error-lastName" />
+                    <label class="mdl-textfield__label" for="lastName">Last name</label>
+                  </div>
+                  <span class="mdl-textfield__error error-lastName"></span>
                 </div>
                 <div
                   class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-                  <input class="mdl-textfield__input" type="email" id="email" required/>
-                  <label class="mdl-textfield__label" for="email">Email</label>
-                  <span class="mdl-textfield__error">Wrong email format</span>
+                  <div class="input-wrapper mdl-shadow--2dp">
+                    <input class="mdl-textfield__input" type="text" id="email" name="email"  data-error=".error-email"
+                    />
+                    <label class="mdl-textfield__label" for="email">Email</label>
+                  </div>
+                  <span class="mdl-textfield__error error-email"></span>
                 </div>
                 <div
                   class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--6-col-phone">
-                  <input class="mdl-textfield__input" type="text" pattern="[A-Z ,a-z]*" id="country" required/>
-                  <label class="mdl-textfield__label" for="country">Country</label>
-                  <span class="mdl-textfield__error">Only alphabet</span>
+                  <div class="input-wrapper mdl-shadow--2dp">
+                    <input class="mdl-textfield__input" type="text"  id="country" name="country"
+                           data-error=".error-country" />
+                    <label class="mdl-textfield__label" for="country">Country</label>
+                  </div>
+                  <span class="mdl-textfield__error error-country"></span>
                 </div>
                 <div
                   class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--6-col-phone">
-                  <input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="postalCode" required/>
-                  <label class="mdl-textfield__label" for="postalCode">Postal Code</label>
-                  <span class="mdl-textfield__error">Only numbers</span>
+                  <div class="input-wrapper mdl-shadow--2dp">
+                    <input class="mdl-textfield__input" type="text"  id="postalCode" name="postalCode"
+                           data-error=".error-postalCode"/>
+                    <label class="mdl-textfield__label" for="postalCode">Postal Code</label>
+                  </div>
+                  <span class="mdl-textfield__error error-postalCode"></span>
                 </div>
                 <div
                   class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-                  <input class="mdl-textfield__input" type="text" pattern="[0-9]{9,11}" id="phoneNumber" required/>
-                  <label class="mdl-textfield__label" for="phoneNumber">Phone Number</label>
-                  <span class="mdl-textfield__error">Only numbers. Min. 9 chars, Max. 11 chars</span>
+                  <div class="input-wrapper mdl-shadow--2dp">
+                    <input class="mdl-textfield__input" type="text"  id="phoneNumber"
+                           name="phoneNumber"  data-error=".error-phoneNumber" />
+                    <label class="mdl-textfield__label" for="phoneNumber">Phone Number</label>
+                  </div>
+                  <span class="mdl-textfield__error error-phoneNumber"></span>
+                </div>
+
+                <div
+                  class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone step">
+                  <h1>
+                    <span>
+                      2
+                    </span>
+                    Payment details
+                  </h1>
+                </div>
+                <div
+                  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                  <div class="input-wrapper mdl-shadow--2dp">
+                    <input class="mdl-textfield__input" type="text"  id="creditCardNumber"
+                           name="creditCardNumber" data-error=".error-creditCardNumber"/>
+                    <label class="mdl-textfield__label" for="creditCardNumber">Credit Card Number</label>
+                  </div>
+                  <span class="mdl-textfield__error error-creditCardNumber"></span>
+                </div>
+                <div
+                  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--6-col-phone">
+                  <div class="input-wrapper mdl-shadow--2dp">
+                    <input class="mdl-textfield__input" type="text"  id="securityCode" name="securityCode"
+                           data-error=".error-securityCode"/>
+                    <label class="mdl-textfield__label" for="securityCode">Security code</label>
+                  </div>
+                  <span class="mdl-textfield__error error-securityCode"></span>
+                </div>
+                <div
+                  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--6-col-phone">
+                  <div class="input-wrapper mdl-shadow--2dp">
+                    <input class="mdl-textfield__input" type="text"  id="expirationDate"
+                           name="expirationDate"   data-error=".error-expirationDate" />
+                    <label class="mdl-textfield__label" for="expirationDate">Expiration date</label>
+                  </div>
+                  <span class="mdl-textfield__error error-expirationDate"></span>
+                </div>
+                <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                  <button class="mdl-button mdl-button--raised buy-btn">
+                    <i class="material-icons">shopping_cart</i> Complete purchase
+                  </button>
                 </div>
 
 
-                <div
-                  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-                  <input class="mdl-textfield__input" type="text" pattern="[0-9]{13,16}" id="creditCardNumber" required/>
-                  <label class="mdl-textfield__label" for="creditCardNumber">Credit Card Number</label>
-                  <span class="mdl-textfield__error">
-                    Wrong credit card number format. Min. 13 chars, max. 16 chars</span>
-                </div>
-                <div
-                  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--6-col-phone">
-                  <input class="mdl-textfield__input" type="text" pattern="[0-9]{3}" id="securityCode" required/>
-                  <label class="mdl-textfield__label" for="securityCode">Security code</label>
-                  <span class="mdl-textfield__error">Wrong security code format. Max. 3 chars</span>
-                </div>
-                <div
-                  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--6-col-phone">
-                  <input class="mdl-textfield__input" type="text" pattern="([0-9]{2}[/]?){2}" id="expirationDate" required/>
-                  <label class="mdl-textfield__label" for="expirationDate">Expiration date</label>
-                  <span class="mdl-textfield__error">Wrong format. Correct format is mm/yy</span>
-                </div>
-                <div
-                  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-                  <button type="submit" value="Submit">Complete purchase</button>
-                </div>
               </form>
             </div>
-            <div class="mdl-card mdl-cell mdl-cell--3-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-              sasd
-            </div>
-          </section>
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
-              <i class="material-icons">play_circle_filled</i>
-            </header>
-            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-              <div class="mdl-card__supporting-text">
-                <h4>Features</h4>
-                Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
-              </div>
-              <div class="mdl-card__actions">
-                <a href="#" class="mdl-button">Read our features</a>
-              </div>
-            </div>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
-              <i class="material-icons">more_vert</i>
-            </button>
-            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
-              <li class="mdl-menu__item">Lorem</li>
-              <li class="mdl-menu__item" disabled>Ipsum</li>
-              <li class="mdl-menu__item">Dolor</li>
-            </ul>
-          </section>
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-              <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-                <h4 class="mdl-cell mdl-cell--12-col">Details</h4>
-                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                  <div class="section__circle-container__circle mdl-color--primary"></div>
+            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+              <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp order">
+                <div class="title">
+                  <strong>Your order</strong>
                 </div>
-                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                  <h5>Lorem ipsum dolor sit amet</h5>
-                  Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
+                <div class="list">
+                  <div class="item">
+                    <div class="left">
+                      Apple watch sport
+                    </div>
+                    <div class="right">
+                      $ 580
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="left">
+                      Modern buckle
+                    </div>
+                    <div class="right">
+                      $ 380
+                    </div>
+                  </div>
                 </div>
-                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                <div class="list">
+                  <div class="item">
+                    <div class="left">
+                      Total purchases
+                    </div>
+                    <div class="right">
+                      $ 960.00
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="left">
+                      Estimated tax
+                    </div>
+                    <div class="right">
+                      $ 0
+                    </div>
+                  </div>
                 </div>
-                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                  <h5>Lorem ipsum dolor sit amet</h5>
-                  Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
-                </div>
-                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                  <div class="section__circle-container__circle mdl-color--primary"></div>
-                </div>
-                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                  <h5>Lorem ipsum dolor sit amet</h5>
-                  Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
+                <div class="summary">
+                  <div class="item">
+                    <div class="left">
+                      Total
+                    </div>
+                    <div class="right">
+                      $ 960
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="mdl-card__actions">
-                <a href="#" class="mdl-button">Read our features</a>
-              </div>
-            </div>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2">
-              <i class="material-icons">more_vert</i>
-            </button>
-            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2">
-              <li class="mdl-menu__item">Lorem</li>
-              <li class="mdl-menu__item" disabled>Ipsum</li>
-              <li class="mdl-menu__item">Dolor</li>
-            </ul>
-          </section>
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-              <div class="mdl-card__supporting-text">
-                <h4>Technology</h4>
-                Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore incididunt elit anim.
-              </div>
-              <div class="mdl-card__actions">
-                <a href="#" class="mdl-button">Read our features</a>
-              </div>
-            </div>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
-              <i class="material-icons">more_vert</i>
-            </button>
-            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
-              <li class="mdl-menu__item">Lorem</li>
-              <li class="mdl-menu__item" disabled>Ipsum</li>
-              <li class="mdl-menu__item">Dolor</li>
-            </ul>
-          </section>
-          <section class="section--footer mdl-color--white mdl-grid">
-            <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-              <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
-            </div>
-            <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-              <h5>Lorem ipsum dolor sit amet</h5>
-              Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
-            </div>
-            <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-              <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
-            </div>
-            <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-              <h5>Lorem ipsum dolor sit amet</h5>
-              Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
             </div>
           </section>
         </div>
@@ -470,8 +473,73 @@
     </script>
     <script>
       $(function() {
-        $("#purchaseForm").validate({
+        $(".buy-btn").click(function() {
+          $("#purchaseForm").submit();
+          return false;
+        });
 
+        $.validator.addMethod(
+          "regex",
+          function(value, element, regexp)
+          {
+            if (regexp.constructor != RegExp)
+              regexp = new RegExp(regexp);
+            else if (regexp.global)
+              regexp.lastIndex = 0;
+            return this.optional(element) || regexp.test(value);
+          },
+          "Regex error"
+        );
+
+        $("#purchaseForm").validate({
+          rules: {
+            firstName: { required: true, regex: /^[a-zA-Z]+$/ },
+            lastName: { required: true, regex: /^[a-zA-Z]+$/  },
+            email: { required: true, email: true  },
+            country: { required: true, regex: /^[a-zA-Z]+$/ },
+            postalCode: { required: true, regex: /^[0-9]+$/  },
+            phoneNumber: { required: true, regex: /^[0-9]{9,11}$/  },
+            creditCardNumber: { required: true, regex: /^[0-9]{13,16}$/  },
+            securityCode: { required: true, regex: /^[0-9]{3}$/  },
+            expirationDate: { required: true, regex: /^([0-9]{2}[/]?){2}$/  },
+          },
+          messages: {
+            firstName: {
+              regex: "Only letters",
+            },
+            lastName: {
+              regex: "Only letters",
+            },
+            country: {
+              regex: "Only letters",
+            },
+            postalCode: {
+              regex: "Only numbers",
+            },
+            phoneNumber: {
+              regex: "Only numbers. Min. 9, max. 11",
+            },
+            creditCardNumber: {
+              regex: "Only numbers. Min. 13, max. 16",
+            },
+            securityCode: {
+              regex: "Only numbers. Correct security code format: XXX",
+            },
+            expirationDate: {
+              regex: "Only numbers. Correct format: mm/yy.",
+            },
+          },
+          submitHandler: function () {
+            alert('Passed!')
+          },
+          errorPlacement: function(error, element) {
+            var placement = $(element).data('error');
+            if (placement) {
+              $(placement).append(error)
+            } else {
+              error.insertAfter(element);
+            }
+          }
         });
       });
     </script>
